@@ -157,7 +157,7 @@ Run `npm run adf` with no command for the terminal app: the whole fleet in one s
 npm run build      # production build
 npm run package    # platform artifacts via electron-builder
 
-npm run typecheck
+npm run typecheck  # both TS projects; fails on errors not in scripts/typecheck-baseline.json
 npm run lint
 npm test               # full Vitest suite
 npm run test:lifecycle # lifecycle, dispatch, handoff, shutdown, recovery

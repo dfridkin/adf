@@ -59,8 +59,11 @@ jobs:
       - name: Lifecycle conformance, closed ledger, and architecture fences
         run: npm run test:lifecycle -- --reporter=verbose
 
-      # Typechecking is also the capability-profile completeness gate: adding
-      # a capability fails until every profile declares a boolean position.
+      # Both TS projects (tsconfig.node.json, tsconfig.web.json), gated on
+      # scripts/typecheck-baseline.json: fails on any new error, and on a
+      # stale baseline once errors are fixed (`npm run typecheck -- --update`).
+      # Also the capability-profile completeness gate: adding a capability
+      # fails until every profile declares a boolean position.
       - name: Typecheck
         run: npm run typecheck
 
